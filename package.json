@@ -1,0 +1,11 @@
+{
+  "name": "gherker",
+  "version": "1.0.0",
+  "description": "Helper for gherkin writing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rinshad",
+  "license": "ISC"
+}

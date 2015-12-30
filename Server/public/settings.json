@@ -1,0 +1,40 @@
+{
+  "sources": {
+    "source": [
+      {
+        "id": "1",
+        "name": "IRIS",
+        "sourceType": "TFS",
+        "sourceFolderLocation": "http://kdcptfsapp01.dqa.capitalone.com:8080/tfs/IRIS",
+        "tfsProjPath": "$/QA/AutomatedFunctionalTests/Main/Tests/WorkFlows",
+        "tfsUserName": "A-KZU822",
+        "tfsPassword": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFBdp0HidDUWVspe6tXGNjwAAAAACAAAAAAADZgAAwAAAABAAAADASzjGb1dmJVmlPPQ6RCXeAAAAAASAAACgAAAAEAAAACP0V20kqGxy82RSZy5vxq0YAAAAVWsRs3dyu09W6A7o4g2ETjPT4FELXUr/FAAAAMs/PbqmheLiugT9GfEeoT8YeHYX",
+        "tfsDomain": "COF"
+      },
+      {
+        "id": "2",
+        "name": "Authorizations-PLCC",
+        "sourceType": "GIT",
+        "sourceFolderLocation": "https://github.kdc.capitalone.com/AutomationJuggernauts/Authorizations-PLCC/archive/master.zip"
+      },
+      {
+        "id": "3",
+        "name": "Partnership System Teams",
+        "sourceType": "GIT",
+        "sourceFolderLocation": "https://github.kdc.capitalone.com/Card-Innovation/Card-Test-ReferenceImplementation/archive/master.zip"
+      },
+      {
+        "id": "4",
+        "name": "JEDI",
+        "sourceType": "GIT",
+        "sourceFolderLocation": "https://github.kdc.capitalone.com/JEDI/JEDI/archive/develop.zip"
+      },
+      {
+        "id": "5",
+        "name": "PONG",
+        "sourceType": "GIT",
+        "sourceFolderLocation": "https://github.kdc.capitalone.com/pong/pong/archive/02.00.DEV.zip"
+      }
+    ]
+  }
+}
