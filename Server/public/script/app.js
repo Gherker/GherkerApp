@@ -11,11 +11,11 @@ app.factory('MovieRetriever', function($http, $q, $timeout){
   document.getElementById('divStatus').innerText = "Loading suggestions..";
   $http({
     method: 'GET',
-    url: '/api/getfeatures/1'
+    url: '/api/getsuggestions/1'
   })
   .success(function (data)
   {             
-   moreMovies = data;
+   moreMovies = data[0].Verbs;
    $('#divStatus_').hide();
    $('#divStatus').innerText = "";
    document.getElementById('divStatus').innerText = "";
