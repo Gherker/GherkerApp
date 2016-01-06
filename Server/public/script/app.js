@@ -3,11 +3,11 @@ $('#divStatus').innerText = "Loading..";
 $('#divStatus_').show();
 var app = angular.module('app', ['autocomplete']);
 
-//var moreMovies = ["When I have navigated to Credit Balance Refund", "When I have selected yes for Credit Balance Refund and confirmed the address","Hello"];
-var moreMovies = [];
+//var moreVerbs = ["When I have navigated to Credit Balance Refund", "When I have selected yes for Credit Balance Refund and confirmed the address","Hello"];
+var moreVerbs = [];
 // the service that retrieves some movie title from an url
-app.factory('MovieRetriever', function($http, $q, $timeout){
-  var MovieRetriever = new Object();
+app.factory('VerbsRetriever', function($http, $q, $timeout){
+  var VerbsRetriever = new Object();
   document.getElementById('divStatus').innerText = "Loading suggestions..";
   $http({
     method: 'GET',
@@ -15,55 +15,55 @@ app.factory('MovieRetriever', function($http, $q, $timeout){
   })
   .success(function (data)
   {             
-   moreMovies = data[0].Verbs;
+   moreVerbs = data[0].Verbs;
    $('#divStatus_').hide();
    $('#divStatus').innerText = "";
    document.getElementById('divStatus').innerText = "";
  });       
 
 
-  MovieRetriever.getmovies = function(i) {
-    var moviedata = $q.defer();
-    var movies;
+  VerbsRetriever.getverbs = function(i) {
+    var verbdata = $q.defer();
+    var verbs;
 
     //var someMovies = ["When I have navigated to Credit Balance Refund", "When I have selected yes for Credit Balance Refund and confirmed the address", ];
 
-    //var moreMovies = ["When I have navigated to Credit Balance Refund", "When I have selected yes for Credit Balance Refund and confirmed the address","Hello"];
+    //var moreVerbs = ["When I have navigated to Credit Balance Refund", "When I have selected yes for Credit Balance Refund and confirmed the address","Hello"];
 
 
 
 
     if(i && i.indexOf('T')!=-1)
-      movies=moreMovies;
+      verbs=moreVerbs;
     else
-      movies=moreMovies;
+      verbs=moreVerbs;
 
     $timeout(function(){
-      moviedata.resolve(movies);
+      verbdata.resolve(verbs);
     },1000);
 
-    return moviedata.promise
+    return verbdata.promise
   }
 
-  return MovieRetriever;
+  return VerbsRetriever;
 });
 
-app.controller('MyCtrl', function($scope,$http, MovieRetriever){
+app.controller('MyCtrl', function($scope,$http, VerbsRetriever){
 
-  $scope.movies = MovieRetriever.getmovies("...");
-  $scope.movies.then(function(data){
-    $scope.movies = data;
+  $scope.verbs = VerbsRetriever.getverbs("...");
+  $scope.verbs.then(function(data){
+    $scope.verbs = data;
   });
 
-  $scope.getmovies = function(){
-    return $scope.movies;
+  $scope.getverbs = function(){
+    return $scope.verbs;
   }
 
   $scope.doSomething = function(typedthings){
     console.log("Do something like reload data with this: " + typedthings );
-    $scope.newmovies = MovieRetriever.getmovies(typedthings);
-    $scope.newmovies.then(function(data){
-      $scope.movies = data;
+    $scope.newverbs = VerbsRetriever.getverbs(typedthings);
+    $scope.newverbs.then(function(data){
+      $scope.verbs = data;
     });
   }
 
@@ -102,7 +102,7 @@ app.controller('MyCtrl', function($scope,$http, MovieRetriever){
     })
     .success(function (data)
     {             
-     moreMovies = data[0].Verbs;
+     moreVerbs = data[0].Verbs;
      $('#divStatus').innerText = "";
      $('#divStatus_').hide();
      document.getElementById('divStatus').innerText = "";
